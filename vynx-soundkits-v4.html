@@ -1,0 +1,1138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>VYNX Sound Kits — AI-Crafted Sample Packs</title>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@300;400;700;900&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;1,9..40,300&display=swap" rel="stylesheet"/>
+<style>
+:root{
+  --black:#06060e; --deep:#0a0a18; --card:#111120; --card2:#181828;
+  --v:#7c3aff; --vb:#a56bff; --vd:#5a1fd1;
+  --gold:#f5c842; --gd:#c49e28;
+  --w:#f0eeff; --muted:#6e6e8a; --muted2:#9898b8;
+  --drum:#ff4d6d; --piano:#4d79ff; --synth:#00e5cc;
+  --bass:#ff9f1c; --vocal:#c77dff;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--black);color:var(--w);font-family:'DM Sans',sans-serif;font-size:16px;line-height:1.6;overflow-x:hidden}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:.9rem 2.5rem;background:rgba(6,6,14,.95);backdrop-filter:blur(18px);border-bottom:.5px solid rgba(124,58,255,.18)}
+.logo{font-family:'Unbounded',sans-serif;font-size:1.1rem;font-weight:900;color:var(--w);letter-spacing:.04em;text-decoration:none}
+.logo span{color:var(--gold)}
+.nav-links{list-style:none;display:flex;gap:2rem}
+.nav-links a{text-decoration:none;color:var(--muted);font-size:.75rem;letter-spacing:.09em;text-transform:uppercase;transition:color .2s}
+.nav-links a:hover{color:var(--vb)}
+.nav-ig{background:linear-gradient(135deg,#833ab4,#fd1d1d,#fcb045)!important;color:#fff!important;padding:.38rem 1rem;border-radius:999px}
+
+/* HERO */
+.hero{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:8rem 2rem 5rem;position:relative;overflow:hidden}
+.orb{position:absolute;border-radius:50%;pointer-events:none}
+.orb1{width:800px;height:800px;background:radial-gradient(circle,rgba(124,58,255,.18) 0%,transparent 70%);top:50%;left:50%;transform:translate(-50%,-50%)}
+.orb2{width:350px;height:350px;background:radial-gradient(circle,rgba(245,200,66,.07) 0%,transparent 70%);top:12%;right:6%}
+.badge{display:inline-flex;align-items:center;gap:.5rem;background:rgba(124,58,255,.11);border:.5px solid rgba(124,58,255,.34);border-radius:999px;padding:.34rem 1rem;font-size:.68rem;letter-spacing:.13em;text-transform:uppercase;color:var(--vb);margin-bottom:1.6rem}
+.badge::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--gold);display:inline-block;animation:blink 2s ease-in-out infinite}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.3}}
+h1{font-family:'Unbounded',sans-serif;font-size:clamp(2.4rem,6.5vw,5.5rem);font-weight:900;line-height:.98;letter-spacing:-.025em;margin-bottom:1.4rem}
+h1 .l2{color:var(--vb)}
+h1 .l3{color:var(--gold);font-size:clamp(1.8rem,4vw,3.5rem);display:block;margin-top:.2rem}
+.hero-sub{font-size:.96rem;color:var(--muted2);max-width:500px;margin:0 auto 1rem;font-weight:300;font-style:italic}
+.hero-tags{display:flex;gap:.45rem;justify-content:center;flex-wrap:wrap;margin-bottom:2.5rem}
+.htag{font-size:.65rem;padding:.25rem .75rem;border-radius:999px;border:.5px solid;font-weight:500}
+.htag-d{background:rgba(255,77,109,.1);border-color:rgba(255,77,109,.35);color:#ff8fa3}
+.htag-p{background:rgba(77,121,255,.1);border-color:rgba(77,121,255,.35);color:#93b8ff}
+.htag-s{background:rgba(0,229,204,.08);border-color:rgba(0,229,204,.3);color:#5efff2}
+.htag-b{background:rgba(255,159,28,.1);border-color:rgba(255,159,28,.3);color:#ffcc80}
+.htag-v{background:rgba(199,125,255,.1);border-color:rgba(199,125,255,.3);color:#ddb0ff}
+.btns{display:flex;gap:.9rem;justify-content:center;flex-wrap:wrap}
+.btn-v{background:var(--v);color:#fff;padding:.82rem 2rem;border-radius:999px;border:none;cursor:pointer;font-family:'DM Sans',sans-serif;font-size:.88rem;transition:all .22s;text-decoration:none;display:inline-block}
+.btn-v:hover{background:var(--vb);transform:translateY(-2px)}
+.btn-g{background:transparent;color:var(--w);padding:.82rem 2rem;border-radius:999px;border:.5px solid rgba(240,238,255,.2);cursor:pointer;font-family:'DM Sans',sans-serif;font-size:.88rem;transition:all .22s;text-decoration:none;display:inline-block}
+.btn-g:hover{border-color:var(--vb);color:var(--vb)}
+.soundbars{display:flex;gap:3px;align-items:flex-end;justify-content:center;height:44px;margin-top:3.5rem}
+.sb{width:4px;border-radius:2px;animation:sbw 1.5s ease-in-out infinite}
+.sb:nth-child(1){background:var(--drum);animation-delay:0s}
+.sb:nth-child(2){background:var(--piano);animation-delay:.12s}
+.sb:nth-child(3){background:var(--v);animation-delay:.22s}
+.sb:nth-child(4){background:var(--synth);animation-delay:.08s}
+.sb:nth-child(5){background:var(--gold);animation-delay:.3s}
+.sb:nth-child(6){background:var(--vocal);animation-delay:.18s}
+.sb:nth-child(7){background:var(--drum);animation-delay:.05s}
+.sb:nth-child(8){background:var(--piano);animation-delay:.25s}
+@keyframes sbw{0%,100%{height:6px;opacity:.4}50%{height:40px;opacity:1}}
+
+/* STATS */
+.stats-strip{background:var(--deep);padding:1.6rem 2rem;border-top:.5px solid rgba(124,58,255,.1);border-bottom:.5px solid rgba(124,58,255,.1)}
+.stats-inner{max-width:1000px;margin:0 auto;display:flex;align-items:center;justify-content:space-around;flex-wrap:wrap;gap:1.2rem}
+.stat{text-align:center}
+.stat-n{font-family:'Unbounded',sans-serif;font-size:1.4rem;font-weight:900;color:var(--vb)}
+.stat-l{font-size:.65rem;color:var(--muted);text-transform:uppercase;letter-spacing:.1em}
+
+/* SECTION COMMONS */
+section{padding:5rem 2rem}
+.container{max-width:1080px;margin:0 auto}
+.slabel{font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:.55rem}
+.stitle{font-family:'Unbounded',sans-serif;font-size:clamp(1.5rem,3vw,2.3rem);font-weight:700;line-height:1.15;margin-bottom:.65rem}
+.ssub{color:var(--muted2);max-width:500px;font-style:italic;font-weight:300;font-size:.9rem}
+.divider{height:.5px;background:linear-gradient(90deg,transparent,rgba(124,58,255,.28),transparent)}
+
+/* WHAT'S INSIDE */
+#what{background:var(--deep)}
+.what-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:1.2rem;margin-top:2.5rem}
+.what-card{background:var(--card);border-radius:14px;padding:1.5rem;border:.5px solid;position:relative;overflow:hidden;transition:all .25s}
+.what-card:hover{transform:translateY(-3px)}
+.what-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px}
+.wc-drum{border-color:rgba(255,77,109,.25)}.wc-drum::before{background:var(--drum)}
+.wc-piano{border-color:rgba(77,121,255,.25)}.wc-piano::before{background:var(--piano)}
+.wc-synth{border-color:rgba(0,229,204,.25)}.wc-synth::before{background:var(--synth)}
+.wc-bass{border-color:rgba(255,159,28,.25)}.wc-bass::before{background:var(--bass)}
+.wc-vocal{border-color:rgba(199,125,255,.25)}.wc-vocal::before{background:var(--vocal)}
+.what-ico{font-size:1.8rem;margin-bottom:.7rem;display:block}
+.what-card h4{font-family:'Unbounded',sans-serif;font-size:.78rem;font-weight:700;margin-bottom:.3rem}
+.what-card p{font-size:.74rem;color:var(--muted2);font-weight:300;line-height:1.5}
+.what-count{font-size:.65rem;color:var(--muted);margin-top:.6rem}
+
+/* ═══════════════════════════════════════
+   KIT CARDS — main shop
+═══════════════════════════════════════ */
+#kits{background:var(--black)}
+.kit-filter{display:flex;gap:.4rem;margin-top:1.8rem;flex-wrap:wrap}
+.kfbtn{padding:.38rem 1rem;border-radius:999px;border:.5px solid rgba(124,58,255,.2);background:transparent;color:var(--muted);font-family:'DM Sans',sans-serif;font-size:.72rem;cursor:pointer;transition:all .2s}
+.kfbtn.active,.kfbtn:hover{background:rgba(124,58,255,.14);border-color:rgba(124,58,255,.42);color:var(--vb)}
+.kits-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:1.4rem;margin-top:1.5rem}
+.kit-card{background:var(--card);border-radius:18px;overflow:hidden;border:.5px solid rgba(124,58,255,.14);transition:all .25s;display:flex;flex-direction:column}
+.kit-card:hover{border-color:rgba(124,58,255,.35);background:var(--card2)}
+
+/* kit header */
+.kit-header{padding:1.3rem 1.3rem .7rem;display:flex;align-items:flex-start;gap:.9rem;position:relative}
+.kit-icon{width:46px;height:46px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.4rem;flex-shrink:0}
+.kit-badge{position:absolute;top:.9rem;right:.9rem;font-size:.6rem;padding:.18rem .55rem;border-radius:999px;font-weight:500}
+.kb-new{background:rgba(245,200,66,.15);border:.5px solid rgba(245,200,66,.3);color:var(--gold)}
+.kb-hot{background:rgba(255,77,109,.15);border:.5px solid rgba(255,77,109,.3);color:#ff8fa3}
+.kb-all{background:rgba(124,58,255,.15);border:.5px solid rgba(124,58,255,.3);color:var(--vb)}
+.kit-meta .kit-name{font-family:'Unbounded',sans-serif;font-size:.84rem;font-weight:700;margin-bottom:.15rem}
+.kit-meta .kit-type{font-size:.68rem;color:var(--muted2)}
+
+/* kit desc */
+.kit-body{padding:0 1.3rem .7rem;flex:1}
+.kit-desc{font-size:.76rem;color:var(--muted2);font-weight:300;margin-bottom:.8rem;font-style:italic}
+.kit-includes{display:flex;flex-wrap:wrap;gap:.28rem;margin-bottom:.9rem}
+.ki{font-size:.6rem;padding:.12rem .45rem;border-radius:999px;border:.5px solid rgba(255,255,255,.08);color:var(--muted2);background:rgba(255,255,255,.03)}
+
+/* ── TRACK ROWS with 15s preview + buy ── */
+.track-list{background:rgba(0,0,0,.22);border-radius:12px;overflow:hidden;border:.5px solid rgba(255,255,255,.05);margin-bottom:.8rem}
+.track-list-header{display:flex;align-items:center;justify-content:space-between;padding:.45rem .85rem;border-bottom:.5px solid rgba(255,255,255,.05)}
+.track-list-label{font-size:.58rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.track-count-badge{font-size:.58rem;padding:.1rem .4rem;background:rgba(124,58,255,.15);border:.5px solid rgba(124,58,255,.25);border-radius:999px;color:var(--vb)}
+
+.track-row{display:grid;grid-template-columns:auto 1fr auto auto;align-items:center;gap:.6rem;padding:.55rem .85rem;border-bottom:.5px solid rgba(255,255,255,.04);transition:background .18s}
+.track-row:last-child{border-bottom:none}
+.track-row:hover{background:rgba(124,58,255,.07)}
+
+/* play button per track */
+.track-play{width:28px;height:28px;border-radius:50%;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:.7rem;transition:all .2s;flex-shrink:0}
+.track-play.idle{background:rgba(124,58,255,.15);color:var(--vb)}
+.track-play.idle:hover{background:rgba(124,58,255,.3)}
+.track-play.playing{background:var(--v);color:#fff;animation:pulse 1s ease-in-out infinite}
+.track-play.paused{background:rgba(124,58,255,.25);color:var(--vb)}
+@keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(124,58,255,.5)}50%{box-shadow:0 0 0 5px rgba(124,58,255,0)}}
+
+/* track info + mini progress */
+.track-center{min-width:0;display:flex;flex-direction:column;gap:.18rem}
+.track-label{font-size:.72rem;color:var(--w);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.track-progress-row{display:flex;align-items:center;gap:.4rem}
+.track-mini-bar{flex:1;height:2px;background:rgba(255,255,255,.08);border-radius:2px;overflow:hidden;cursor:pointer}
+.track-mini-fill{height:100%;background:linear-gradient(90deg,var(--v),var(--gold));width:0%;transition:width .1s linear}
+.track-timer{font-size:.58rem;color:var(--muted);min-width:28px;text-align:right;font-variant-numeric:tabular-nums}
+
+/* buy button per track */
+.track-buy-btn{background:var(--v);color:#fff;border:none;border-radius:999px;padding:.3rem .75rem;font-family:'DM Sans',sans-serif;font-size:.65rem;font-weight:500;cursor:pointer;white-space:nowrap;transition:all .2s;flex-shrink:0}
+.track-buy-btn:hover{background:var(--vb);transform:scale(1.05)}
+
+/* no audio state */
+.track-no-audio{padding:.65rem .85rem;font-size:.68rem;color:var(--muted);font-style:italic;display:flex;align-items:center;gap:.4rem}
+
+/* kit footer */
+.kit-footer{padding:.85rem 1.3rem;border-top:.5px solid rgba(255,255,255,.05);display:flex;align-items:center;justify-content:space-between}
+.kit-price{font-family:'Unbounded',sans-serif;font-size:1rem;font-weight:700;color:var(--gold)}
+.kit-usd{font-size:.66rem;color:var(--muted)}
+.kit-buy-main{background:var(--v);color:#fff;border:none;border-radius:999px;padding:.45rem 1.2rem;font-family:'DM Sans',sans-serif;font-size:.76rem;font-weight:500;cursor:pointer;transition:all .2s}
+.kit-buy-main:hover{background:var(--vb)}
+
+/* ═══════════════════════════════════════
+   BUNDLE KIT SECTION
+═══════════════════════════════════════ */
+#bundles{background:var(--deep)}
+.bundles-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:1.4rem;margin-top:2rem}
+.bundle-card{background:var(--card);border-radius:18px;border:.5px solid rgba(245,200,66,.2);overflow:hidden;transition:all .25s}
+.bundle-card:hover{border-color:rgba(245,200,66,.45);transform:translateY(-3px)}
+.bundle-top{padding:1.3rem;border-bottom:.5px solid rgba(255,255,255,.05)}
+.bundle-header{display:flex;align-items:center;gap:.9rem;margin-bottom:.7rem}
+.bundle-icon{width:46px;height:46px;border-radius:12px;background:rgba(245,200,66,.15);display:flex;align-items:center;justify-content:center;font-size:1.4rem}
+.bundle-title{font-family:'Unbounded',sans-serif;font-size:.88rem;font-weight:700}
+.bundle-subtitle{font-size:.68rem;color:var(--muted2)}
+.bundle-desc{font-size:.76rem;color:var(--muted2);font-style:italic;font-weight:300}
+/* what's inside the bundle */
+.bundle-includes{padding:1rem 1.3rem;display:flex;flex-direction:column;gap:.5rem}
+.bundle-includes-label{font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:.2rem}
+.bundle-kit-row{display:flex;align-items:center;gap:.7rem;padding:.4rem .6rem;background:rgba(255,255,255,.03);border-radius:8px;border:.5px solid rgba(255,255,255,.05)}
+.bkr-icon{font-size:1rem}
+.bkr-name{font-size:.74rem;color:var(--w);flex:1}
+.bkr-type{font-size:.62rem;color:var(--muted)}
+.bundle-footer{padding:.85rem 1.3rem;border-top:.5px solid rgba(255,255,255,.05);display:flex;align-items:center;justify-content:space-between}
+.bundle-price-block{display:flex;flex-direction:column}
+.bundle-price{font-family:'Unbounded',sans-serif;font-size:1.1rem;font-weight:900;color:var(--gold)}
+.bundle-original{font-size:.68rem;color:var(--muted);text-decoration:line-through}
+.bundle-save{font-size:.62rem;color:#4de896;background:rgba(29,164,98,.12);border:.5px solid rgba(29,164,98,.25);border-radius:999px;padding:.1rem .5rem;margin-top:.2rem;display:inline-block;width:fit-content}
+.bundle-buy{background:linear-gradient(135deg,var(--gd),var(--gold));color:#000;border:none;border-radius:999px;padding:.5rem 1.4rem;font-family:'DM Sans',sans-serif;font-size:.78rem;font-weight:700;cursor:pointer;transition:all .2s}
+.bundle-buy:hover{filter:brightness(1.1);transform:scale(1.03)}
+
+/* HOW IT WORKS */
+#how{background:var(--black)}
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(175px,1fr));gap:1.2rem;margin-top:2.5rem}
+.step{text-align:center;padding:1.5rem 1rem;background:var(--card);border-radius:14px;border:.5px solid rgba(124,58,255,.11)}
+.snum{font-family:'Unbounded',sans-serif;font-size:1.8rem;font-weight:900;color:rgba(124,58,255,.18);margin-bottom:.6rem}
+.step-ico{font-size:1.3rem;margin-bottom:.45rem;display:block}
+.step h4{font-family:'Unbounded',sans-serif;font-size:.74rem;font-weight:700;margin-bottom:.3rem}
+.step p{font-size:.72rem;color:var(--muted2);font-weight:300}
+
+/* ABOUT */
+#about{background:var(--deep)}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;margin-top:2.3rem}
+.about-vis{aspect-ratio:1;border-radius:50%;background:linear-gradient(135deg,var(--v),#1a0040 50%,var(--gd));display:flex;align-items:center;justify-content:center;font-family:'Unbounded',sans-serif;font-size:2.4rem;font-weight:900;color:#fff;max-width:230px;margin:0 auto;position:relative}
+.about-vis::after{content:'';position:absolute;inset:-14px;border-radius:50%;border:.5px solid rgba(124,58,255,.18)}
+.about-text p{color:var(--muted2);font-weight:300;font-style:italic;margin-bottom:.85rem;font-size:.88rem}
+.about-text strong{color:var(--w);font-style:normal;font-weight:400}
+.socials{display:flex;gap:.6rem;margin-top:1.2rem;flex-wrap:wrap}
+.sc{display:inline-flex;align-items:center;gap:.35rem;padding:.38rem .95rem;border-radius:999px;border:.5px solid rgba(124,58,255,.28);font-size:.72rem;color:var(--vb);text-decoration:none;transition:all .2s}
+.sc:hover{background:rgba(124,58,255,.1);border-color:var(--vb)}
+
+/* ═══════════════════════════════════════
+   PLAYER BAR
+═══════════════════════════════════════ */
+.player-bar{position:fixed;bottom:0;left:0;right:0;z-index:200;background:rgba(10,10,24,.98);backdrop-filter:blur(22px);border-top:.5px solid rgba(124,58,255,.2);padding:.7rem 2rem;display:flex;align-items:center;gap:1.4rem;transform:translateY(100%);transition:transform .4s cubic-bezier(.16,1,.3,1)}
+.player-bar.on{transform:translateY(0)}
+.pi{flex:1;min-width:0}
+.pt-title{font-family:'Unbounded',sans-serif;font-size:.72rem;font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.pt-kit{font-size:.6rem;color:var(--muted)}
+.pt-warn{font-size:.55rem;color:rgba(245,200,66,.55);letter-spacing:.04em}
+.pc{display:flex;align-items:center;gap:.85rem}
+.pcb{background:none;border:none;color:var(--w);cursor:pointer;font-size:.88rem;opacity:.6;transition:opacity .2s}
+.pcb:hover{opacity:1}
+.ppb{width:34px;height:34px;border-radius:50%;background:var(--v);border:none;color:#fff;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:.82rem;transition:all .2s}
+.ppb:hover{background:var(--vb);transform:scale(1.1)}
+.pp{flex:2;display:flex;flex-direction:column;gap:.2rem}
+.pb-wrap{width:100%;height:3px;background:rgba(255,255,255,.08);border-radius:3px;cursor:pointer}
+.pf{height:100%;border-radius:3px;background:linear-gradient(90deg,var(--v),var(--gold));transition:width .1s linear}
+.pt2{display:flex;justify-content:space-between;font-size:.6rem;color:var(--muted)}
+/* 15s warning flash */
+.preview-limit-flash{font-size:.58rem;color:var(--gold);opacity:0;transition:opacity .3s;margin-left:.5rem}
+.preview-limit-flash.show{opacity:1}
+/* player buy button */
+.player-buy{background:var(--v);color:#fff;border:none;border-radius:999px;padding:.35rem .9rem;font-family:'DM Sans',sans-serif;font-size:.68rem;cursor:pointer;white-space:nowrap;transition:all .2s;flex-shrink:0}
+.player-buy:hover{background:var(--vb)}
+
+/* ═══════════════════════════════════════
+   PAYMENT MODAL
+═══════════════════════════════════════ */
+.mover{display:none;position:fixed;inset:0;z-index:300;background:rgba(6,6,14,.92);backdrop-filter:blur(14px);align-items:center;justify-content:center;padding:1rem}
+.mover.open{display:flex}
+.modal{background:var(--card);border:.5px solid rgba(124,58,255,.28);border-radius:22px;padding:2rem;max-width:480px;width:100%;position:relative;max-height:90vh;overflow-y:auto}
+.mcl{position:absolute;top:.85rem;right:1.1rem;background:none;border:none;color:var(--muted);font-size:1.2rem;cursor:pointer}
+.mcl:hover{color:var(--w)}
+
+/* modal kit summary */
+.modal-kit-hd{display:flex;align-items:center;gap:1rem;margin-bottom:1rem;padding-bottom:1rem;border-bottom:.5px solid rgba(255,255,255,.06)}
+.modal-kit-ico{width:48px;height:48px;border-radius:11px;display:flex;align-items:center;justify-content:center;font-size:1.4rem;flex-shrink:0}
+.modal-kit-info h3{font-family:'Unbounded',sans-serif;font-size:.92rem;font-weight:700;margin-bottom:.12rem}
+.modal-kit-type{font-size:.66rem;color:var(--muted2)}
+.mprice-row{display:flex;align-items:baseline;gap:.6rem;margin-bottom:1rem}
+.mprice{font-family:'Unbounded',sans-serif;font-size:1.5rem;font-weight:900;color:var(--gold)}
+.mprice-usd{font-size:.72rem;color:var(--muted)}
+
+/* what they get */
+.mwhat{background:rgba(124,58,255,.06);border:.5px solid rgba(124,58,255,.15);border-radius:10px;padding:.65rem .9rem;margin-bottom:1.2rem}
+.mwhat-label{font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:.4rem}
+.mwhat-items{display:flex;flex-wrap:wrap;gap:.3rem}
+.mwhat-item{font-size:.65rem;padding:.15rem .5rem;background:rgba(124,58,255,.1);border:.5px solid rgba(124,58,255,.2);border-radius:999px;color:var(--vb)}
+
+/* wallet grid — clean 2-col */
+.mpay-label{font-size:.66rem;letter-spacing:.13em;text-transform:uppercase;color:var(--muted);margin-bottom:.65rem}
+.wallet-grid{display:grid;grid-template-columns:1fr 1fr;gap:.6rem;margin-bottom:.8rem}
+.wallet-btn{display:flex;align-items:center;gap:.6rem;padding:.7rem .85rem;border-radius:12px;border:none;cursor:pointer;font-family:'DM Sans',sans-serif;font-size:.74rem;font-weight:500;color:#fff;transition:all .2s;text-align:left}
+.wallet-btn:hover{transform:translateY(-2px);filter:brightness(1.12)}
+.wallet-btn:active{transform:scale(.97)}
+.wbtn-ico{font-size:1rem;flex-shrink:0}
+.wbtn-text{display:flex;flex-direction:column}
+.wbtn-name{font-size:.72rem;font-weight:600}
+.wbtn-sub{font-size:.58rem;opacity:.75}
+
+/* tab toggle MY / INT'L */
+.pay-type-tabs{display:flex;gap:.3rem;margin-bottom:.8rem}
+.pay-type-tab{flex:1;padding:.38rem;border-radius:8px;border:.5px solid rgba(124,58,255,.2);background:transparent;color:var(--muted);font-family:'DM Sans',sans-serif;font-size:.7rem;cursor:pointer;transition:all .2s;text-align:center}
+.pay-type-tab.active{background:rgba(124,58,255,.15);border-color:rgba(124,58,255,.4);color:var(--vb)}
+.pay-mpanel{display:none}
+.pay-mpanel.active{display:block}
+
+.pay-secure-note{display:flex;align-items:center;gap:.4rem;padding:.45rem .7rem;background:rgba(255,255,255,.03);border-radius:8px;margin-top:.6rem}
+.pay-secure-note span{font-size:.63rem;color:var(--muted)}
+
+/* FOOTER */
+footer{background:var(--black);border-top:.5px solid rgba(124,58,255,.09);padding:2.5rem 2rem 7rem;text-align:center}
+.flogo{font-family:'Unbounded',sans-serif;font-size:1.4rem;font-weight:900;margin-bottom:.35rem}
+.flogo span{color:var(--gold)}
+footer p{color:var(--muted);font-size:.72rem;font-style:italic}
+
+@media(max-width:680px){
+  .about-grid{grid-template-columns:1fr}
+  .nav-links{display:none}
+  .player-bar{padding:.6rem 1rem;gap:.7rem}
+  .kits-grid,.bundles-grid{grid-template-columns:1fr}
+  .wallet-grid{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a class="logo" href="#">VYNX <span>SOUND KITS</span></a>
+  <ul class="nav-links">
+    <li><a href="#what">Inside</a></li>
+    <li><a href="#kits">Shop</a></li>
+    <li><a href="#bundles">Bundles</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="https://instagram.com/VYNX.Song" target="_blank" class="nav-ig">@VYNX.Song</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="orb orb1"></div><div class="orb orb2"></div>
+  <div class="badge">World's First AI Sound Kit Artist</div>
+  <h1>Build your<br><span class="l2">next hit</span><br><span class="l3">with VYNX sounds.</span></h1>
+  <p class="hero-sub">AI-crafted sample packs — drum kits, piano loops, synth layers, bass lines. Built for producers, beatmakers &amp; creators worldwide.</p>
+  <div class="hero-tags">
+    <span class="htag htag-d">🥁 Drum Kits</span>
+    <span class="htag htag-p">🎹 Piano Loops</span>
+    <span class="htag htag-s">🌊 Synth Layers</span>
+    <span class="htag htag-b">🔊 Bass Lines</span>
+    <span class="htag htag-v">🎤 Vocal Chops</span>
+  </div>
+  <div class="btns">
+    <a href="#kits" class="btn-v">Shop Sound Kits</a>
+    <a href="#bundles" class="btn-g">View Bundles</a>
+  </div>
+  <div class="soundbars">
+    <div class="sb" style="height:10px"></div><div class="sb" style="height:24px"></div>
+    <div class="sb" style="height:16px"></div><div class="sb" style="height:38px"></div>
+    <div class="sb" style="height:28px"></div><div class="sb" style="height:12px"></div>
+    <div class="sb" style="height:34px"></div><div class="sb" style="height:20px"></div>
+  </div>
+</section>
+
+<!-- STATS -->
+<div class="stats-strip">
+  <div class="stats-inner">
+    <div class="stat"><div class="stat-n">100%</div><div class="stat-l">AI Generated</div></div>
+    <div class="stat"><div class="stat-n">MP3 + WAV</div><div class="stat-l">File formats</div></div>
+    <div class="stat"><div class="stat-n">Royalty Free</div><div class="stat-l">Use commercially</div></div>
+    <div class="stat"><div class="stat-n">RM19.90+</div><div class="stat-l">Starting price</div></div>
+    <div class="stat"><div class="stat-n">12</div><div class="stat-l">Payment options</div></div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- WHAT'S INSIDE -->
+<section id="what">
+  <div class="container">
+    <p class="slabel">Inside each kit</p>
+    <h2 class="stitle">Every layer. Separated. Ready to use.</h2>
+    <p class="ssub">Unlike a finished song — you get every element isolated. Mix, chop, rearrange. Make it yours.</p>
+    <div class="what-grid">
+      <div class="what-card wc-drum"><span class="what-ico">🥁</span><h4>Drum Kit</h4><p>Kicks, snares, hi-hats, percs — every hit isolated as individual files at high quality.</p><div class="what-count">~40–80 samples per kit</div></div>
+      <div class="what-card wc-piano"><span class="what-ico">🎹</span><h4>Piano Loops</h4><p>Melodic piano progressions in multiple keys. Emotional, romantic, JVKE-inspired.</p><div class="what-count">~8–12 loops per kit</div></div>
+      <div class="what-card wc-synth"><span class="what-ico">🌊</span><h4>Synth Layers</h4><p>Atmospheric pads, leads and arps. Futuristic textures inspired by ANYMA's world.</p><div class="what-count">~10–20 loops per kit</div></div>
+      <div class="what-card wc-bass"><span class="what-ico">🔊</span><h4>Bass Lines</h4><p>808s, sub-bass, pluck bass. Tuned perfectly so you can repitch to any key.</p><div class="what-count">~6–10 loops per kit</div></div>
+      <div class="what-card wc-vocal"><span class="what-ico">🎤</span><h4>Vocal Chops</h4><p>AI-processed vocal textures and chops. 100% royalty free — no clearance needed.</p><div class="what-count">~15–30 samples per kit</div></div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- SHOP KITS -->
+<section id="kits">
+  <div class="container">
+    <p class="slabel">Shop</p>
+    <h2 class="stitle">VYNX Sound Kits</h2>
+    <p class="ssub">Click ▶ on any track to hear a 15-second preview. Hit Buy Kit to purchase instantly.</p>
+    <div class="kit-filter">
+      <button class="kfbtn active" data-f="all">All Kits</button>
+      <button class="kfbtn" data-f="drum">🥁 Drums</button>
+      <button class="kfbtn" data-f="melody">🎹 Melody</button>
+      <button class="kfbtn" data-f="synth">🌊 Synth</button>
+    </div>
+    <div class="kits-grid" id="kitsGrid"></div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- BUNDLES -->
+<section id="bundles">
+  <div class="container">
+    <p class="slabel">Value bundles</p>
+    <h2 class="stitle">VYNX Full Kits</h2>
+    <p class="ssub">Curated combinations — get matched kits together at a bundle price. Save more, create more.</p>
+    <div class="bundles-grid" id="bundlesGrid"></div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- HOW IT WORKS -->
+<section id="how">
+  <div class="container">
+    <p class="slabel">How it works</p>
+    <h2 class="stitle">Simple as 4 steps</h2>
+    <div class="steps">
+      <div class="step"><div class="snum">01</div><span class="step-ico">🎧</span><h4>Preview 15s</h4><p>Click ▶ on any loop. Hear 15 seconds free — watermarked for protection.</p></div>
+      <div class="step"><div class="snum">02</div><span class="step-ico">💳</span><h4>Tap Buy</h4><p>Hit Buy Kit — choose TNG, Boost, GrabPay, PayPal or any of 12 options.</p></div>
+      <div class="step"><div class="snum">03</div><span class="step-ico">⬇️</span><h4>Get Your Files</h4><p>Download link sent instantly. MP3 files, clean no watermark.</p></div>
+      <div class="step"><div class="snum">04</div><span class="step-ico">🎛️</span><h4>Make Your Hit</h4><p>Drop into FL Studio, GarageBand, Ableton. Create something new.</p></div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-vis">VX</div>
+      <div class="about-text">
+        <p class="slabel">The creator</p>
+        <h2 class="stitle">The VYNX Sound</h2>
+        <p>VYNX Sound Kits are crafted from a space between <strong>JVKE's emotional depth</strong>, <strong>ANYMA's electronic architecture</strong>, and the raw energy of modern hip-hop.</p>
+        <p>Every kit is AI-generated — not sampled, not stolen — built sound by sound with intention. The result: <strong>a palette no one else has</strong>.</p>
+        <p><strong>100% royalty free.</strong> Use in your songs, videos, content — commercially or personally. No clearance. No drama.</p>
+        <div class="socials">
+          <a href="https://instagram.com/VYNX.Song" target="_blank" class="sc">📷 @VYNX.Song</a>
+          <a href="#kits" class="sc">🎛️ Shop Kits</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PLAYER BAR -->
+<div class="player-bar" id="pbar">
+  <audio id="audioEl"></audio>
+  <div class="pi">
+    <div class="pt-title" id="ptitle">—</div>
+    <div class="pt-kit" id="pkit">VYNX Sound Kits
+      <span class="preview-limit-flash" id="limitFlash">⏱ 15s preview</span>
+    </div>
+    <div class="pt-warn">⚠ Watermarked preview — buy for full clean version</div>
+  </div>
+  <div class="pc">
+    <button class="pcb" id="prevB">⏮</button>
+    <button class="ppb" id="ppbtn">▶</button>
+    <button class="pcb" id="nextB">⏭</button>
+  </div>
+  <div class="pp">
+    <div class="pb-wrap" id="pbWrap"><div class="pf" id="pfill" style="width:0%"></div></div>
+    <div class="pt2"><span id="tnow">0:00</span><span id="ttot">0:15</span></div>
+  </div>
+  <button class="player-buy" id="playerBuyBtn" style="display:none">Buy Kit →</button>
+</div>
+
+<!-- PAYMENT MODAL -->
+<div class="mover" id="mover">
+  <div class="modal">
+    <button class="mcl" id="mcl">✕</button>
+    <div class="modal-kit-hd">
+      <div class="modal-kit-ico" id="mico">🎛️</div>
+      <div class="modal-kit-info">
+        <div class="slabel">Purchase</div>
+        <h3 id="mtitle">Kit Name</h3>
+        <div class="modal-kit-type" id="mktype">Type</div>
+      </div>
+    </div>
+    <div class="mprice-row">
+      <div class="mprice" id="mprice">RM19.90</div>
+      <div class="mprice-usd" id="mprice2">≈ USD 4.20</div>
+    </div>
+    <!-- What they get -->
+    <div class="mwhat">
+      <div class="mwhat-label">What you get</div>
+      <div class="mwhat-items" id="mwhatItems"></div>
+    </div>
+    <div class="mpay-label">Choose how to pay</div>
+    <div class="pay-type-tabs">
+      <button class="pay-type-tab active" data-mp="my">🇲🇾 Malaysian Wallets</button>
+      <button class="pay-type-tab" data-mp="int">🌍 International</button>
+    </div>
+    <!-- Malaysian wallets -->
+    <div class="pay-mpanel active" id="mp-my">
+      <div class="wallet-grid">
+        <button class="wallet-btn" style="background:#1da462" onclick="doPay('tng')">
+          <span class="wbtn-ico">💚</span><span class="wbtn-text"><span class="wbtn-name">Touch 'n Go</span><span class="wbtn-sub">23M+ users · #1 MY</span></span>
+        </button>
+        <button class="wallet-btn" style="background:#ff6b35" onclick="doPay('boost')">
+          <span class="wbtn-ico">🟠</span><span class="wbtn-text"><span class="wbtn-name">Boost</span><span class="wbtn-sub">Cashback every time</span></span>
+        </button>
+        <button class="wallet-btn" style="background:#00b14f" onclick="doPay('grab')">
+          <span class="wbtn-ico">🟢</span><span class="wbtn-text"><span class="wbtn-name">GrabPay</span><span class="wbtn-sub">Earn GrabRewards</span></span>
+        </button>
+        <button class="wallet-btn" style="background:#e4002b" onclick="doPay('duitnow')">
+          <span class="wbtn-ico">❤️</span><span class="wbtn-text"><span class="wbtn-name">DuitNow QR</span><span class="wbtn-sub">All banks + wallets</span></span>
+        </button>
+        <button class="wallet-btn" style="background:#ee4d2d" onclick="doPay('shopeepay')">
+          <span class="wbtn-ico">🛒</span><span class="wbtn-text"><span class="wbtn-name">ShopeePay</span><span class="wbtn-sub">Popular with teens</span></span>
+        </button>
+        <button class="wallet-btn" style="background:#f5a623;color:#000" onclick="doPay('mae')">
+          <span class="wbtn-ico">🏦</span><span class="wbtn-text"><span class="wbtn-name" style="color:#000">MAE Maybank</span><span class="wbtn-sub" style="color:#333">Full banking wallet</span></span>
+        </button>
+        <button class="wallet-btn" style="background:#1a56db" onclick="doPay('bigpay')">
+          <span class="wbtn-ico">✈️</span><span class="wbtn-text"><span class="wbtn-name">BigPay</span><span class="wbtn-sub">AirAsia-backed</span></span>
+        </button>
+        <button class="wallet-btn" style="background:#07c160" onclick="doPay('wechat')">
+          <span class="wbtn-ico">💬</span><span class="wbtn-text"><span class="wbtn-name">WeChat Pay</span><span class="wbtn-sub">Chinese community MY</span></span>
+        </button>
+      </div>
+    </div>
+    <!-- International -->
+    <div class="pay-mpanel" id="mp-int">
+      <div class="wallet-grid">
+        <button class="wallet-btn" style="background:#003087" onclick="doPay('paypal')">
+          <span class="wbtn-ico">🔵</span><span class="wbtn-text"><span class="wbtn-name">PayPal</span><span class="wbtn-sub">430M+ worldwide</span></span>
+        </button>
+        <button class="wallet-btn" style="background:#635bff" onclick="doPay('stripe')">
+          <span class="wbtn-ico">💳</span><span class="wbtn-text"><span class="wbtn-name">Card (Stripe)</span><span class="wbtn-sub">Visa · MC · Amex</span></span>
+        </button>
+        <button class="wallet-btn" style="background:#00a892" onclick="doPay('alipay')">
+          <span class="wbtn-ico">🔷</span><span class="wbtn-text"><span class="wbtn-name">Alipay</span><span class="wbtn-sub">China + 50 countries</span></span>
+        </button>
+        <button class="wallet-btn" style="background:#0f9d58" onclick="doPay('googlepay')">
+          <span class="wbtn-ico">🔘</span><span class="wbtn-text"><span class="wbtn-name">Google Pay</span><span class="wbtn-sub">Android globally</span></span>
+        </button>
+      </div>
+    </div>
+    <div class="pay-secure-note"><span>🔒</span><span>Secure payment · Download link sent to you immediately after payment confirmed</span></div>
+  </div>
+</div>
+
+<script>
+/* ═══════════════════════════════════════════════════
+   KITS DATA
+   previewTracks: array of { label, url }
+   url must be: https://drive.google.com/uc?export=download&id=YOUR_FILE_ID
+
+   TO ADD MORE SONGS to any kit:
+   Just add another { label: "Loop 4", url: "YOUR_LINK" }
+   inside that kit's previewTracks array.
+═══════════════════════════════════════════════════ */
+const KITS = [
+  {
+    id: 1,
+    name: "Gravity Drum Kit",
+    type: "Drum Kit",
+    cat: "drum",
+    icon: "🥁",
+    color: "#ff4d6d",
+    iconBg: "rgba(255,77,109,.2)",
+    desc: "Hard-hitting 808s, snappy snares and crispy hats built for emotional hip-hop and trap.",
+    includes: ["3 loops","808s","Snares","Hi-hats","Percs","MP3"],
+    price: "RM5.99",
+    usd: "≈ USD 1.49",
+    badge: "hot",
+    bars: [8,22,14,36,20,30,10,28,16,32],
+    previewTracks: [
+      {
+        label: "Blackroom Pulse — Loop 1",
+        url: "https://res.cloudinary.com/dusnuynax/video/upload/v1776961621/Blackroom_Pulse_btbc72.mp3"
+      },
+      {
+        label: "Blackroom Pulse_2 — Loop 2",
+        url: "https://res.cloudinary.com/dusnuynax/video/upload/v1776961687/Blackroom_Pulse_2_suzvv2.mp3"
+      },
+      {
+        label: "Shadow Kick — Loop 3",
+        url: "https://res.cloudinary.com/dusnuynax/video/upload/v1776961687/Blackroom_Pulse_2_suzvv2.mp3"
+      }
+      /* ➕ ADD LOOP 4 HERE:
+      ,{
+        label: "Your Loop Name — Loop 4",
+        url: "https://drive.google.com/uc?export=download&id=YOUR_FILE_ID"
+      }
+      */
+    ]
+  },
+  {
+    id: 2,
+    name: "Neon Piano Loops",
+    type: "Piano Loops",
+    cat: "melody",
+    icon: "🎹",
+    color: "#4d79ff",
+    iconBg: "rgba(77,121,255,.2)",
+    desc: "Romantic melodic progressions with JVKE-inspired emotional tension. Minor keys, lush chords.",
+    includes: ["Loops","MIDI","Multiple keys","MP3"],
+    price: "RM6.99",
+    usd: "≈ USD 1.67",
+    badge: "new",
+    bars: [20,12,34,8,28,16,36,22,14,30],
+    previewTracks: [
+      {
+        label: "Velvet Minor Key — Loop 1",
+        url: "https://res.cloudinary.com/dusnuynax/video/upload/v1776962024/Velvet_Minor_Key_cbqzn7.mp3"
+      },
+      {
+        label: "Velvet Minor Key_2 — Loop 2",
+        url: "https://res.cloudinary.com/dusnuynax/video/upload/v1776962072/Velvet_Minor_Key_2_lftvdf.mp3"
+      },
+      /* ➕ ADD LOOP 4 HERE:
+      ,{
+        label: "Your Loop Name — Loop 4",
+        url: "https://drive.google.com/uc?export=download&id=YOUR_FILE_ID"
+      }
+      */
+    ]
+  },
+  {
+    id: 3,
+    name: "Void Synth Pack",
+    type: "Synth Layers",
+    cat: "synth",
+    icon: "🌊",
+    color: "#00e5cc",
+    iconBg: "rgba(0,229,204,.15)",
+    desc: "Atmospheric pads, dark leads and arp sequences. Inspired by ANYMA's rave-futurism.",
+    includes: ["Loops","Pads","Leads","Arps","MP3"],
+    price: "RM6.99",
+    usd: "≈ USD 1.67",
+    badge: "new",
+    bars: [14,32,8,28,38,12,24,18,34,10],
+    previewTracks: [
+      {
+        label: "Basalt Pulse — Loop 1",
+        url: "https://res.cloudinary.com/dusnuynax/video/upload/v1776962742/Basalt_Pulse_mmoulf.mp3"
+      },
+      {
+        label: "Basalt Pulse_2 — Loop 2",
+        url: "https://res.cloudinary.com/dusnuynax/video/upload/v1776962072/Velvet_Minor_Key_2_lftvdf.mp3"
+      },
+      /* ➕ ADD LOOP 4 HERE:
+      ,{
+        label: "Your Loop Name — Loop 4",
+        url: "https://drive.google.com/uc?export=download&id=YOUR_FILE_ID"
+      }
+      */
+    ]
+  },
+  {
+    id: 4,
+    name: "Ultraviolet Bass Kit",
+    type: "Bass Lines + 808s",
+    cat: "drum",
+    icon: "🔊",
+    color: "#ff9f1c",
+    iconBg: "rgba(255,159,28,.15)",
+    desc: "Tuned 808 slides, sub-bass rolls and pluck bass lines.",
+    includes: ["Loops","808 slides","Sub bass","Pluck","MP3"],
+    price: "RM19.90",
+    usd: "≈ USD 4.20",
+    badge: null,
+    bars: [36,10,28,18,34,8,22,30,12,26],
+    previewTracks: [
+      {
+        label: "Cinder Subfeed — Loop 1",
+        url: "https://res.cloudinary.com/dusnuynax/video/upload/v1776962874/Cinder_Subfeed_ndoobf.mp3"
+      },
+      {
+        label: "Cinder Subfeed_2 — Loop 2",
+        url: "https://res.cloudinary.com/dusnuynax/video/upload/v1776962935/Cinder_Subfeed_2_kjgeq7.mp3"
+      },
+      /* ➕ ADD LOOP 4 HERE:
+      ,{
+        label: "Your Loop Name — Loop 4",
+        url: "https://drive.google.com/uc?export=download&id=YOUR_FILE_ID"
+      }
+      */
+    ]
+  },
+  {
+    id: 5,
+    name: "Digital Bloom Vocal Chops",
+    type: "Vocal Chops + Textures",
+    cat: "melody",
+    icon: "🎤",
+    color: "#c77dff",
+    iconBg: "rgba(199,125,255,.15)",
+    desc: "AI-processed vocal stabs, chops and atmospheric textures. 100% royalty free.",
+    includes: ["Chops","Stabs","Textures","FX","MP3"],
+    price: "RM19.90",
+    usd: "≈ USD 4.20",
+    badge: null,
+    bars: [12,28,20,36,8,30,18,24,34,14],
+    previewTracks: [
+      {
+        label: "Copper Throat — Loop 1",
+        url: "https://res.cloudinary.com/dusnuynax/video/upload/v1776963339/Copper_Throat_mfzdfk.mp3"
+      },
+      {
+        label: "Copper Throat_2 — Loop 2",
+        url: "https://res.cloudinary.com/dusnuynax/video/upload/v1776963336/Copper_Throat_2_t19r4j.mp3"
+      },
+      /* ➕ ADD LOOP 4 HERE:
+      ,{
+        label: "Your Loop Name — Loop 4",
+        url: "https://drive.google.com/uc?export=download&id=YOUR_FILE_ID"
+      }
+      */
+    ]
+  },
+];
+
+/* ═══════════════════════════════════════════════════
+   BUNDLES DATA
+   kitIds: which KITS are included (by id)
+   originalPrice: what it would cost individually
+   bundlePrice: your discounted bundle price
+
+   ➕ TO ADD A NEW BUNDLE:
+   Copy the block below and change the details.
+   kitIds must match the id numbers in KITS above.
+═══════════════════════════════════════════════════ */
+const BUNDLES = [
+  {
+    id: "bundle-1",
+    name: "Gravity + Neon Bundle",
+    subtitle: "Drums meets Piano — JVKE vibes",
+    desc: "The perfect combo — hard drums from Gravity paired with emotional piano from Neon. Build a full beat with just these two kits.",
+    icon: "🎯",
+    kitIds: [1, 2],           // Gravity Drum Kit + Neon Piano Loops
+    originalPrice: "RM44.80", // 19.90 + 24.90
+    bundlePrice: "RM34.90",
+    usd: "≈ USD 7.40",
+    save: "Save RM9.90"
+  },
+  {
+    id: "bundle-2",
+    name: "Void + Ultraviolet Bundle",
+    subtitle: "Synth meets Bass — ANYMA vibes",
+    desc: "Dark atmospheric synths layered over heavy bass lines. Pure futuristic electronic energy for producers who go deep.",
+    icon: "🌌",
+    kitIds: [3, 4],           // Void Synth Pack + Ultraviolet Bass Kit
+    originalPrice: "RM44.80", // 24.90 + 19.90
+    bundlePrice: "RM34.90",
+    usd: "≈ USD 7.40",
+    save: "Save RM9.90"
+  },
+  {
+    id: "bundle-3",
+    name: "VYNX Full Kit Vol.1",
+    subtitle: "Everything — the complete VYNX sound",
+    desc: "All 5 kits in one purchase. Drums, piano, synth, bass and vocal chops. The most complete AI sample pack ever made in Malaysia.",
+    icon: "📦",
+    kitIds: [1, 2, 3, 4, 5],  // All kits
+    originalPrice: "RM108.50",
+    bundlePrice: "RM79.90",
+    usd: "≈ USD 16.90",
+    save: "Save RM28.60"
+  }
+  /* ➕ ADD A NEW BUNDLE HERE:
+  ,{
+    id: "bundle-4",
+    name: "Your Bundle Name",
+    subtitle: "Your subtitle",
+    desc: "Your description.",
+    icon: "🎵",
+    kitIds: [1, 3],
+    originalPrice: "RM44.80",
+    bundlePrice: "RM34.90",
+    usd: "≈ USD 7.40",
+    save: "Save RM9.90"
+  }
+  */
+];
+
+/* ═══════════════════════════════════════════════════
+   PAYMENT LINKS
+   Replace SETUP_NEEDED with your real links.
+   Easiest: HitPay.com (Malaysian) + Gumroad.com (International)
+═══════════════════════════════════════════════════ */
+const PAY_LINKS = {
+  tng:       "SETUP_NEEDED",
+  boost:     "SETUP_NEEDED",
+  grab:      "SETUP_NEEDED",
+  duitnow:   "SETUP_NEEDED",
+  shopeepay: "SETUP_NEEDED",
+  mae:       "SETUP_NEEDED",
+  bigpay:    "SETUP_NEEDED",
+  wechat:    "SETUP_NEEDED",
+  paypal:    "SETUP_NEEDED",  // e.g. https://paypal.me/VYNXSoundKits
+  stripe:    "SETUP_NEEDED",  // e.g. https://buy.stripe.com/xxxxx
+  alipay:    "SETUP_NEEDED",
+  googlepay: "SETUP_NEEDED"
+};
+
+const PAY_SETUP = {
+  tng:       "Sign up at merchant.touchngo.com.my → get your merchant link",
+  boost:     "Sign up at merchant.myboost.com.my → get your payment link",
+  grab:      "Sign up at grab.com/my/grabpay-merchant → get your merchant link",
+  duitnow:   "Open your bank app → DuitNow → Receive → Generate Static QR → copy link",
+  shopeepay: "Open Shopee app → Me → ShopeePay → Receive → copy link",
+  mae:       "Open MAE app → QR → Receive → copy your receive link",
+  bigpay:    "Open BigPay → Receive Money → Share link",
+  wechat:    "WeChat → Me → Pay → Receive Money → QR code link",
+  paypal:    "Go to paypal.com/paypalme → create paypal.me/VYNXSoundKits",
+  stripe:    "dashboard.stripe.com → Payment Links → Create link",
+  alipay:    "global.alipay.com/merchant → get merchant payment link",
+  googlepay: "Set up via Stripe — Google Pay appears automatically"
+};
+
+/* ═══════════════════════════════════════════════════
+   RENDER KIT CARDS
+═══════════════════════════════════════════════════ */
+let activeCat = "all";
+const kitsGrid = document.getElementById("kitsGrid");
+
+function renderKits() {
+  kitsGrid.innerHTML = "";
+  KITS.filter(k => activeCat === "all" || k.cat === activeCat).forEach(k => {
+    const el = document.createElement("div");
+    el.className = "kit-card";
+    const badgeHTML = k.badge
+      ? `<span class="kit-badge ${k.badge==="hot"?"kb-hot":k.badge==="new"?"kb-new":"kb-all"}">${k.badge==="hot"?"🔥 Hot":"✨ New"}</span>`
+      : "";
+
+    let trackHTML = "";
+    if (k.previewTracks.length > 0) {
+      const rows = k.previewTracks.map((t, i) => `
+        <div class="track-row" id="trow-${k.id}-${i}">
+          <button class="track-play idle" id="tplay-${k.id}-${i}" onclick="playTrack(${k.id},${i})">▶</button>
+          <div class="track-center">
+            <div class="track-label">${t.label}</div>
+            <div class="track-progress-row">
+              <div class="track-mini-bar"><div class="track-mini-fill" id="tmini-${k.id}-${i}"></div></div>
+              <div class="track-timer" id="ttimer-${k.id}-${i}">0:15</div>
+            </div>
+          </div>
+          <button class="track-buy-btn" onclick="openModal(${k.id})">Buy Kit</button>
+        </div>`).join("");
+      trackHTML = `
+        <div class="track-list">
+          <div class="track-list-header">
+            <span class="track-list-label">▶ 15s preview — click any track</span>
+            <span class="track-count-badge">${k.previewTracks.length} loop${k.previewTracks.length>1?"s":""}</span>
+          </div>
+          ${rows}
+        </div>`;
+    } else {
+      trackHTML = `
+        <div class="track-list">
+          <div class="track-no-audio">🔒 Preview coming soon</div>
+        </div>`;
+    }
+
+    el.innerHTML = `
+      <div class="kit-header">
+        <div class="kit-icon" style="background:${k.iconBg}">${k.icon}</div>
+        <div class="kit-meta"><div class="kit-name">${k.name}</div><div class="kit-type">${k.type}</div></div>
+        ${badgeHTML}
+      </div>
+      <div class="kit-body">
+        <p class="kit-desc">${k.desc}</p>
+        ${trackHTML}
+        <div class="kit-includes">${k.includes.map(i=>`<span class="ki">${i}</span>`).join("")}</div>
+      </div>
+      <div class="kit-footer">
+        <div><div class="kit-price">${k.price}</div><div class="kit-usd">${k.usd}</div></div>
+        <button class="kit-buy-main" onclick="openModal(${k.id})">Buy Kit</button>
+      </div>`;
+    kitsGrid.appendChild(el);
+  });
+}
+renderKits();
+
+document.querySelectorAll(".kfbtn").forEach(b => b.addEventListener("click", () => {
+  document.querySelectorAll(".kfbtn").forEach(x => x.classList.remove("active"));
+  b.classList.add("active"); activeCat = b.dataset.f; renderKits();
+}));
+
+/* ═══════════════════════════════════════════════════
+   RENDER BUNDLES
+═══════════════════════════════════════════════════ */
+const bundlesGrid = document.getElementById("bundlesGrid");
+BUNDLES.forEach(b => {
+  const includedKits = b.kitIds.map(id => KITS.find(k => k.id === id)).filter(Boolean);
+  const kitRows = includedKits.map(k => `
+    <div class="bundle-kit-row">
+      <span class="bkr-icon">${k.icon}</span>
+      <span class="bkr-name">${k.name}</span>
+      <span class="bkr-type">${k.type}</span>
+    </div>`).join("");
+
+  const el = document.createElement("div");
+  el.className = "bundle-card";
+  el.innerHTML = `
+    <div class="bundle-top">
+      <div class="bundle-header">
+        <div class="bundle-icon">${b.icon}</div>
+        <div><div class="bundle-title">${b.name}</div><div class="bundle-subtitle">${b.subtitle}</div></div>
+      </div>
+      <p class="bundle-desc">${b.desc}</p>
+    </div>
+    <div class="bundle-includes">
+      <div class="bundle-includes-label">Includes</div>
+      ${kitRows}
+    </div>
+    <div class="bundle-footer">
+      <div class="bundle-price-block">
+        <div class="bundle-price">${b.bundlePrice}</div>
+        <div class="bundle-original">${b.originalPrice} individually</div>
+        <span class="bundle-save">${b.save}</span>
+      </div>
+      <button class="bundle-buy" onclick="openBundleModal('${b.id}')">Buy Bundle →</button>
+    </div>`;
+  bundlesGrid.appendChild(el);
+});
+
+/* ═══════════════════════════════════════════════════
+   AUDIO — 15 SECOND PREVIEW LIMIT
+═══════════════════════════════════════════════════ */
+const PREVIEW_LIMIT = 15; // seconds — change to 30 if you want longer
+const audioEl   = document.getElementById("audioEl");
+const ppbtn     = document.getElementById("ppbtn");
+const pfill     = document.getElementById("pfill");
+const tnowEl    = document.getElementById("tnow");
+const ttotEl    = document.getElementById("ttot");
+const ptitleEl  = document.getElementById("ptitle");
+const pkitEl    = document.getElementById("pkit");
+const pbar      = document.getElementById("pbar");
+const pbWrap    = document.getElementById("pbWrap");
+const limitFlash = document.getElementById("limitFlash");
+const playerBuyBtn = document.getElementById("playerBuyBtn");
+
+let curKitId = null, curTrackIdx = null;
+let previewStart = 0; // when in the audio the preview started
+
+function fmtTime(s) {
+  if (isNaN(s)||s<0) return "0:00";
+  const m = Math.floor(s/60), sec = Math.floor(s%60);
+  return m+":"+(sec<10?"0":"")+sec;
+}
+
+function clearAllUI() {
+  document.querySelectorAll(".track-play").forEach(el => {
+    el.className = "track-play idle"; el.textContent = "▶";
+  });
+  document.querySelectorAll(".track-row").forEach(el => el.classList.remove("active-track"));
+  document.querySelectorAll(".track-mini-fill").forEach(el => el.style.width = "0%");
+  document.querySelectorAll("[id^='ttimer-']").forEach(el => el.textContent = "0:15");
+}
+
+function setPlayIcon(kitId, idx, state) {
+  const el = document.getElementById(`tplay-${kitId}-${idx}`);
+  if (!el) return;
+  el.className = `track-play ${state}`;
+  el.textContent = state === "playing" ? "⏸" : "▶";
+}
+
+function playTrack(kitId, trackIdx) {
+  const kit   = KITS.find(k => k.id === kitId);
+  const track = kit && kit.previewTracks[trackIdx];
+  if (!track) return;
+
+  const isSame = curKitId === kitId && curTrackIdx === trackIdx;
+
+  if (isSame) {
+    // toggle pause/play
+    if (audioEl.paused) {
+      audioEl.play();
+      ppbtn.textContent = "⏸";
+      setPlayIcon(kitId, trackIdx, "playing");
+    } else {
+      audioEl.pause();
+      ppbtn.textContent = "▶";
+      setPlayIcon(kitId, trackIdx, "paused");
+    }
+    return;
+  }
+
+  clearAllUI();
+  curKitId = kitId; curTrackIdx = trackIdx;
+  audioEl.src = track.url;
+  audioEl.load();
+  previewStart = 0;
+
+  audioEl.addEventListener("canplay", function onCanPlay() {
+    audioEl.removeEventListener("canplay", onCanPlay);
+    audioEl.play().catch(()=>{ppbtn.textContent="▶";});
+  }, {once: true});
+
+  ppbtn.textContent = "⏸";
+  ptitleEl.textContent = track.label;
+  pkitEl.innerHTML = `${kit.name} <span class="preview-limit-flash" id="limitFlash">⏱ 15s preview</span>`;
+  ttotEl.textContent = "0:" + (PREVIEW_LIMIT < 10 ? "0" : "") + PREVIEW_LIMIT;
+  pbar.classList.add("on");
+  playerBuyBtn.style.display = "block";
+  playerBuyBtn.onclick = () => openModal(kitId);
+
+  setPlayIcon(kitId, trackIdx, "playing");
+  const row = document.getElementById(`trow-${kitId}-${trackIdx}`);
+  if (row) row.classList.add("active-track");
+
+  // Flash the 15s label
+  setTimeout(() => {
+    const lf = document.getElementById("limitFlash");
+    if (lf) { lf.classList.add("show"); setTimeout(()=>lf.classList.remove("show"), 2000); }
+  }, 100);
+}
+
+/* Time update — enforce 15 second limit */
+audioEl.addEventListener("timeupdate", () => {
+  if (!audioEl.duration) return;
+
+  const elapsed = audioEl.currentTime;
+  const remaining = PREVIEW_LIMIT - elapsed;
+
+  // Stop at 15 seconds
+  if (elapsed >= PREVIEW_LIMIT) {
+    audioEl.pause();
+    audioEl.currentTime = 0;
+    ppbtn.textContent = "▶";
+    pfill.style.width = "100%";
+    tnowEl.textContent = "0:" + (PREVIEW_LIMIT < 10 ? "0" : "") + PREVIEW_LIMIT;
+
+    // Flash buy prompt
+    if (curKitId !== null) {
+      const lf = document.getElementById("limitFlash");
+      if (lf) { lf.textContent = "🛒 Preview ended — buy to hear full"; lf.classList.add("show"); }
+    }
+
+    clearAllUI();
+    return;
+  }
+
+  // Update progress bar based on 15s window
+  const pct = (elapsed / PREVIEW_LIMIT) * 100;
+  pfill.style.width = pct + "%";
+  tnowEl.textContent = fmtTime(elapsed);
+
+  // Update mini bar and timer in card
+  if (curKitId !== null && curTrackIdx !== null) {
+    const mini  = document.getElementById(`tmini-${curKitId}-${curTrackIdx}`);
+    const timer = document.getElementById(`ttimer-${curKitId}-${curTrackIdx}`);
+    if (mini)  mini.style.width = pct + "%";
+    if (timer) timer.textContent = "0:" + (remaining < 10 ? "0" : "") + Math.max(0, Math.floor(remaining));
+  }
+});
+
+audioEl.addEventListener("ended", () => { clearAllUI(); ppbtn.textContent = "▶"; });
+
+pbWrap.addEventListener("click", e => {
+  if (!audioEl.duration) return;
+  const pct = (e.clientX - pbWrap.getBoundingClientRect().left) / pbWrap.offsetWidth;
+  audioEl.currentTime = pct * PREVIEW_LIMIT;
+});
+
+ppbtn.addEventListener("click", () => {
+  if (audioEl.paused) {
+    audioEl.play(); ppbtn.textContent = "⏸";
+    if (curKitId !== null) setPlayIcon(curKitId, curTrackIdx, "playing");
+  } else {
+    audioEl.pause(); ppbtn.textContent = "▶";
+    if (curKitId !== null) setPlayIcon(curKitId, curTrackIdx, "paused");
+  }
+});
+
+document.getElementById("nextB").addEventListener("click", () => {
+  if (curKitId === null) return;
+  const kit = KITS.find(k => k.id === curKitId);
+  const next = curTrackIdx + 1;
+  if (kit && next < kit.previewTracks.length) playTrack(curKitId, next);
+});
+document.getElementById("prevB").addEventListener("click", () => {
+  if (curKitId === null) return;
+  const prev = curTrackIdx - 1;
+  if (prev >= 0) playTrack(curKitId, prev);
+});
+
+/* ═══════════════════════════════════════════════════
+   MODAL — KIT PURCHASE
+═══════════════════════════════════════════════════ */
+let activeMKid = null;
+let activeMPrice = "RM19.90";
+
+function openModal(kitId) {
+  const k = KITS.find(x => x.id === kitId);
+  if (!k) return;
+  activeMKid = kitId;
+  activeMPrice = k.price;
+  document.getElementById("mtitle").textContent    = k.name;
+  document.getElementById("mktype").textContent    = k.type;
+  document.getElementById("mprice").textContent    = k.price;
+  document.getElementById("mprice2").textContent   = k.usd;
+  document.getElementById("mico").textContent      = k.icon;
+  document.getElementById("mico").style.background = k.iconBg;
+  document.getElementById("mwhatItems").innerHTML  =
+    k.includes.map(i => `<span class="mwhat-item">${i}</span>`).join("");
+  document.getElementById("mover").classList.add("open");
+}
+
+function openBundleModal(bundleId) {
+  const b = BUNDLES.find(x => x.id === bundleId);
+  if (!b) return;
+  activeMKid   = null;
+  activeMPrice = b.bundlePrice;
+  const includedKits = b.kitIds.map(id => KITS.find(k => k.id === id)).filter(Boolean);
+  document.getElementById("mtitle").textContent    = b.name;
+  document.getElementById("mktype").textContent    = b.subtitle;
+  document.getElementById("mprice").textContent    = b.bundlePrice;
+  document.getElementById("mprice2").textContent   = b.usd + " · " + b.save;
+  document.getElementById("mico").textContent      = b.icon;
+  document.getElementById("mico").style.background = "rgba(245,200,66,.15)";
+  document.getElementById("mwhatItems").innerHTML  =
+    includedKits.map(k => `<span class="mwhat-item">${k.icon} ${k.name}</span>`).join("");
+  document.getElementById("mover").classList.add("open");
+}
+
+document.getElementById("mcl").addEventListener("click", () => document.getElementById("mover").classList.remove("open"));
+document.getElementById("mover").addEventListener("click", e => { if (e.target===e.currentTarget) e.currentTarget.classList.remove("open"); });
+
+document.querySelectorAll(".pay-type-tab").forEach(t => t.addEventListener("click", () => {
+  document.querySelectorAll(".pay-type-tab").forEach(x => x.classList.remove("active"));
+  document.querySelectorAll(".pay-mpanel").forEach(x => x.classList.remove("active"));
+  t.classList.add("active");
+  document.getElementById("mp-" + t.dataset.mp).classList.add("active");
+}));
+
+/* ═══════════════════════════════════════════════════
+   PAYMENT — opens real link or shows setup guide
+═══════════════════════════════════════════════════ */
+function doPay(method) {
+  const link = PAY_LINKS[method];
+  if (!link || link === "SETUP_NEEDED") {
+    alert(
+      "⚙️ Setup needed for this payment method:\n\n" +
+      PAY_SETUP[method] +
+      "\n\n💡 EASIEST OPTIONS:\n" +
+      "• Malaysian: HitPay.com — all wallets in ONE link\n" +
+      "• International: Gumroad.com — PayPal + card, auto-delivers files\n\n" +
+      "Paste your link into PAY_LINKS." + method + " in the HTML file."
+    );
+    return;
+  }
+  window.open(link, "_blank", "noopener,noreferrer");
+}
+</script>
+</body>
+</html>
